@@ -41,7 +41,7 @@ const AlissService = function() {
       if(request.status = 200) {
         let jsonString = request.responseText;
         let returnedData = JSON.parse(jsonString);
-        let parsedData = this.createHostelObjects(returnedData);
+        let parsedData = this.createVenueObjects(returnedData);
 
         callback(parsedData);
       };
