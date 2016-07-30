@@ -72,7 +72,7 @@ const AlissService = function() {
       };
       venueObjectArray.push(venueObject);
     };
-    return hostelObjectArray;
+    return venueObjectArray;
   };
 
 };
