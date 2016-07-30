@@ -2,21 +2,22 @@ import React, { Component } from 'react';
 
 import Banner from './Banner';
 import DetailsForm from './DetailsForm';
+import DisplayInfo from './DisplayInfo';
 
 export default class App extends Component {
-  
-  getFormData(data){
-    console.log("allo");
-    console.log(data);
-    this.setState(data);
-  }
 
-  render(){
-    return (
-        <div>
-        <Banner/>
-        <DetailsForm formData={this.getFormData.bind(this)}/>
-        </div>
-    );
-  }
+    getFormData(data){
+        console.log("allo");
+        console.log(data);
+        this.setState(data);
+    }
+
+    render(){
+        return (
+                <div>
+                <Banner/>
+                <DetailsForm formData={this.getFormData.bind(this)}/>
+                </div>
+               );
+    }
 }

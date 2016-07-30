@@ -7,24 +7,27 @@ export default class Banner extends Component {
         const styles = reactCSS({
             'default':{
                 'div':{
-                    'width': '80%',
-                    'text-align':'center'
+                    'width': '100%',
+                    'text-align':'center',
+                    'border-bottom': '2px solid #2AFF31'
                 },
                 'header':{
-                    'wifht':'100%',
-                    'text-align':'center'
+                    'widht':'100%',
+                    'textAlign':'center',
+                    'fontFamily': 'sans-serif',
+                    'font-size': '32px' 
                 },
                 'subtext':{
                     'width':'100%',
-                    'text-align':'center',
+                    'textAlign':'center',
                     'color':'red'
                 }
             }
         })
 
         return(
-            <div>
-            <h1 style={styles.header}>Temporary Name</h1>
+            <div style={styles.div}>
+            <h1 style={styles.header}>Assistiva</h1>
             <h2 style={styles.subtext}> If you are in immediate danger, dial 999</h2>
             </div> 
         )
