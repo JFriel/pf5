@@ -6,7 +6,7 @@ import DisplayInfo from './DisplayInfo';
 export default class DetailsForm extends Component {
     constructor(props){
         super(props);
-        this.state = {gender:null, age:null,postcode:null,location:null,needs:[],dataInput:false};
+        this.state = {gender:null, age:null,postcode:null,location:null,need:[],dataInput:false};
     }
 
     handleGender(event){
@@ -22,10 +22,9 @@ export default class DetailsForm extends Component {
         this.setState({location: 'EH3'});
     }
     handleNeeds(event){
-        this.setState({needs: event.target.value});
+        this.setState({need: event.target.value});
     }
     handleSubmit(event){
-        console.log('update?');
         this.setState({dataInput:true});
     }
     render(){
@@ -55,18 +54,18 @@ export default class DetailsForm extends Component {
             <div style={styles.div}>
                 <form>
                     <h4>Tell us about yourself so we can find you the help you need</h4>
-                    <input type='text' name='gender' placeholder='Gender' onChange={() =>{this.handleGender}} style={styles.input}/><br/>
-                    <input type='text' name='age' placeholder='Age'onChange={()=>{this.handleAge}} style={styles.input}/><br/>
+                    <input type='text' name='gender' placeholder='Gender' onChange={this.handleGender.bind(this)} style={styles.input}/><br/>
+                    <input type='text' name='age' placeholder='Age'onChange={this.handleAge.bind(this)} style={styles.input}/><br/>
                     <h4>Tell us where you are:</h4>
-                    <input type='text' name='Postcode' placeholder='Postcode'onChange={()=>{this.handlePostcode}} style={styles.input}/>
+                    <input type='text' name='Postcode' placeholder='Postcode'onChange={this.handlePostcode.bind(this)} style={styles.input}/>
                     <h5>Or use your current location</h5>
-                    <input type='button' name='CurrentLocation' value='Current Location'onChange={()=>{this.handleLocation}}/><br/>
+                    <input type='button' name='CurrentLocation' value='Current Location'onChange={this.handleLocation.bind(this)}/><br/>
                     <h3>What service do you need?</h3>
-                    <input type='checkbox' name='Shelter'onChange={()=>{this.handleNeeds}}  style={styles.input}/>A Place To Stay<br/>
+                    <input type='checkbox' name='Shelter'onChange={this.handleNeeds.bind(this)}  style={styles.input}/>A Place To Stay<br/>
 
-                    <input type='checkbox' name='Advice Centre' onChange={()=>{this.handleNeeds}} style={styles.input}/>An Advice Centre<br/>
+                    <input type='checkbox' name='Advice Centre' onChange={this.handleNeeds.bind(this)} style={styles.input}/>An Advice Centre<br/>
 
-                    <input type='checkbox' name='Food Bank'onChange={()=>{this.handleNeeds}} style={styles.input}/>A Food Bank<br/>
+                    <input type='checkbox' name='Food Bank'onChange={this.handleNeeds.bind(this)} style={styles.input}/>A Food Bank<br/>
                 </form>
                 <br/>
                 <button onClick={this.handleSubmit.bind(this)} style={styles.button}>Confirm Details and Continue</button>
@@ -76,7 +75,7 @@ export default class DetailsForm extends Component {
         )
         }else{
             return(
-                <DisplayInfo gender={this.state.gender} age={this.state.age} postcode={this.state.postcode} location={this.state.location} needs={this.state.needs}/>    
+                <DisplayInfo gender={this.state.gender} age={this.state.age} postcode={this.state.postcode} location={this.state.location} needs={this.state.need}/>    
             )
         }
     }        

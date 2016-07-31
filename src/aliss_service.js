@@ -30,7 +30,7 @@ const AlissService = function() {
   };
 
   this.createUrl = function() {
-    const url = "https://www.aliss.org/api/v2/search/?q=";
+    let url = "https://www.aliss.org/api/v2/search/?q=";
     url = url + this.need + this.gender + this.location;
   };
 
